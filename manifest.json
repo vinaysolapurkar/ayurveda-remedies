@@ -1,0 +1,8 @@
+{
+ "name":"Ayurveda Remedies — Ashtanga Hridaya",
+ "short_name":"Ayurveda",
+ "description":"Find your dosha and traditional Ayurvedic guidance for your life, from the classical Ashtanga Hridaya. Educational, not medical advice.",
+ "start_url":"./","scope":"./","display":"standalone",
+ "background_color":"#f6f1e7","theme_color":"#2c5a39","orientation":"portrait",
+ "icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]
+}

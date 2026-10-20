@@ -1,0 +1,669 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ayurveda Remedies — Ashtanga Hridaya</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2c5a39">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ayurveda">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="description" content="Find traditional Ayurvedic guidance for your concerns, drawn from the classical Ashtanga Hridaya Sutrasthana. Educational, not medical advice.">
+<style>
+:root{--bg:#f6f1e7;--card:#fffdf8;--ink:#2a2420;--mut:#7a6f62;--line:#e7ddc9;--saffron:#c9741f;--leaf:#3f7a4e;--leaf-d:#2c5a39;--maroon:#8a3324;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(160deg,#3f7a4e,#2c5a39);color:#fff;padding:26px 0 18px}
+header .wrap{display:flex;flex-direction:column;gap:3px}
+.om{font-size:26px}
+h1{font-size:23px;letter-spacing:-.3px}
+header p{color:#dcebdd;font-size:13.5px}
+.disclaimer{background:#fff4e4;border-bottom:1px solid #f0d9b5;color:#7a5520;font-size:12.5px;padding:9px 0}
+.disclaimer .wrap{display:flex;gap:8px;align-items:flex-start}
+nav{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto}
+.tab{flex:none;background:none;border:none;padding:13px 14px;font-size:14px;font-weight:600;color:var(--mut);cursor:pointer;border-bottom:3px solid transparent}
+.tab.on{color:var(--leaf-d);border-bottom-color:var(--saffron)}
+main{padding:18px 0 70px}
+.lead{font-size:14.5px;color:var(--mut);margin-bottom:14px}
+.catblock{margin-bottom:16px}
+.catblock h3{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--saffron);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:8px 13px;font-size:13.5px;cursor:pointer;user-select:none}
+.chip.sel{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:10px;align-items:center;z-index:30}
+.bar .cnt{font-size:13px;color:var(--mut);flex:1}
+.btn{background:var(--saffron);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-size:15px;font-weight:700;cursor:pointer}
+.btn.ghost{background:none;color:var(--leaf-d);border:1.5px solid var(--leaf)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px}
+.card .ptitle{font-weight:700;font-size:16px;margin-bottom:2px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 8px}
+.tag{font-size:11px;font-weight:600;border-radius:6px;padding:2px 8px;background:#eef4ee;color:var(--leaf-d)}
+.tag.dosha{background:#f3e9dc;color:var(--saffron)}
+.tag.clin{background:#fdecea;color:var(--maroon)}
+.guid{font-size:14px;color:#3a332c}
+.cite{font-size:12px;color:var(--mut);margin-top:8px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+select,input[type=search]{font-size:14px;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+input[type=search]{width:100%;margin-bottom:12px}
+.chap{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.chap summary{padding:13px 15px;cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;gap:10px;align-items:baseline}
+.chap summary::-webkit-details-marker{display:none}
+.chap .cn{color:var(--saffron);font-size:13px;font-weight:800}
+.chap .body{padding:0 15px 14px;font-size:14px;color:#3a332c}
+.chap .body ul{margin:8px 0 0 18px}.chap .body li{margin:4px 0}
+.figure{margin:14px 0;text-align:center}
+.figure img{max-width:100%;border-radius:14px;border:1px solid var(--line)}
+.figure figcaption{font-size:12px;color:var(--mut);margin-top:6px}
+.empty{color:var(--mut);font-size:14px;padding:20px;text-align:center}
+.about p{margin:9px 0;font-size:14px}
+.notice{background:#fff4e4;border:1px solid #f0d9b5;border-radius:12px;padding:13px 15px;color:#7a5520;font-size:13px;margin:12px 0}
+a{color:var(--leaf-d)}
+footer{border-top:1px solid var(--line);padding:18px 0;color:var(--mut);font-size:12px}
+.hide{display:none!important}
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:10px}
+.qq{font-weight:700;font-size:14.5px;margin-bottom:9px}
+.qopt{display:flex;gap:9px;align-items:flex-start;padding:7px 0;font-size:14px;cursor:pointer;color:#3a332c}
+.qopt input{margin-top:3px;flex:none;width:17px;height:17px;accent-color:var(--leaf)}
+#chatMsgs{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;min-height:40px}
+.msg{max-width:88%;padding:11px 14px;border-radius:14px;font-size:14px;white-space:pre-wrap;line-height:1.5}
+.msg.user{align-self:flex-end;background:var(--leaf);color:#fff;border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-start;background:var(--card);border:1px solid var(--line);color:#2a2420;border-bottom-left-radius:4px}
+.msg.bot.think{color:var(--mut);font-style:italic}
+.chatbar{display:flex;gap:8px;align-items:flex-end;position:sticky;bottom:0;background:var(--bg);padding:8px 0}
+.chatbar textarea{flex:1;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;resize:none;max-height:120px;font-family:inherit}
+.today-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.tdate{font-size:12.5px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.thello{font-size:19px;font-weight:800;color:var(--leaf-d);letter-spacing:-.3px}
+.streak{flex:none;text-align:center;background:linear-gradient(160deg,#f3e9dc,#f8efe0);border:1.5px solid #ecdcc2;border-radius:14px;padding:8px 14px;min-width:72px}
+.snum{font-size:26px;font-weight:900;color:var(--saffron);line-height:1}
+.slbl{font-size:10.5px;color:#a07a3c;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+.ritem{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);cursor:pointer}
+.ritem:first-child{border-top:none}
+.rbox{flex:none;width:24px;height:24px;border-radius:7px;border:2px solid var(--line);margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;transition:.15s}
+.ritem.on .rbox{background:var(--leaf);border-color:var(--leaf)}
+.ritem.on .rtext{color:var(--mut);text-decoration:line-through;text-decoration-color:#c9bfa9}
+.rtext b{display:block;font-size:14.5px;color:var(--ink);font-weight:700}
+.ritem.on .rtext b{color:var(--mut)}
+.rtext span{font-size:12.5px;color:var(--mut)}
+.rtime{flex:none;font-size:11px;font-weight:800;color:var(--saffron);background:#faf2e6;border-radius:6px;padding:2px 7px;margin-top:2px}
+.rprog{display:flex;align-items:center;gap:10px;margin-top:12px}
+.rprog-bar{flex:1;height:8px;background:#eee3cf;border-radius:99px;overflow:hidden}
+.rprog-bar span{display:block;height:100%;width:0;background:var(--leaf);border-radius:99px;transition:.3s}
+.ci-row{margin-bottom:14px}
+.ci-q{font-size:14px;font-weight:700;margin-bottom:7px}
+.ci-opts{display:flex;gap:7px;flex-wrap:wrap}
+.ci-opt{border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:7px 12px;font-size:13.5px;cursor:pointer;user-select:none}
+.ci-opt.sel{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.ci-scale{display:flex;gap:6px}
+.ci-scale .ci-opt{flex:1;text-align:center;padding:9px 0;font-weight:700}
+.ci-note{width:100%;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit}
+.weekstrip{display:flex;gap:6px}
+.wday{flex:1;text-align:center}
+.wdot{height:40px;border-radius:9px;background:#eee3cf;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;position:relative}
+.wdot span{display:block;width:100%;background:var(--leaf);border-radius:0 0 9px 9px}
+.wlbl{font-size:10px;color:var(--mut);margin-top:4px;font-weight:600}
+.wtoday .wlbl{color:var(--saffron);font-weight:800}
+.focuscard{background:linear-gradient(165deg,#ffffff,#fbf6ec);border:1.5px solid #ecdcc2;border-radius:18px;padding:18px 17px;margin-bottom:14px;box-shadow:0 4px 18px rgba(140,110,50,.08)}
+.focuslabel{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--saffron);margin-bottom:9px}
+.focustext{font-size:21px;font-weight:800;line-height:1.3;color:var(--leaf-d);letter-spacing:-.3px;margin-bottom:8px}
+.focuswhy{font-size:14px;color:#4a4139;margin-bottom:16px}
+.donebtn{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:#fff;border:2px solid var(--leaf);color:var(--leaf-d);border-radius:13px;padding:14px;font-size:16px;font-weight:800;cursor:pointer;transition:.15s}
+.donebtn .dtick{display:inline-flex;width:22px;height:22px;border-radius:50%;border:2px solid var(--leaf);align-items:center;justify-content:center;font-size:13px;color:transparent}
+.donebtn.on{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.donebtn.on .dtick{background:#fff;color:var(--leaf);border-color:#fff}
+.focusweek{display:flex;align-items:center;gap:12px;margin:15px 0 4px}
+.focusweek .weekstrip{flex:1}
+.onechange{font-size:12.5px;color:var(--mut);margin-top:12px;line-height:1.5;text-align:center}
+#nextCard{border:1.5px solid #ecdcc2;background:#fbf6ec}
+#routineDetails{margin-bottom:12px}
+.askbtn{margin-top:12px;background:#eef4ee;border:1.5px solid #cfe3d2;color:var(--leaf-d);border-radius:10px;padding:9px 14px;font-size:13.5px;font-weight:700;cursor:pointer}
+.askbtn:active{background:#dcebdd}
+.topicchip{background:#f3e9dc;border:1px solid #ecdcc2;border-radius:10px;padding:8px 12px;font-size:13px;color:#7a5520;margin-bottom:10px}
+.topicchip b{color:var(--saffron)}
+.topicchip a{float:right;text-decoration:none;color:#b08642;font-weight:800;margin-left:8px}
+/* ---- mobile-app shell: slim header + bottom tab bar ---- */
+header{padding:14px 0 13px}
+header .wrap{flex-direction:row;align-items:center;gap:9px}
+header .om{font-size:22px}
+header h1{font-size:18px}
+main{padding:16px 0 calc(78px + env(safe-area-inset-bottom,0px))}
+.botnav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -2px 14px rgba(60,45,20,.06)}
+.botnav .wrap{display:flex;gap:0;padding:0}
+.botnav .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border:none;border-top:3px solid transparent;background:none;padding:9px 4px 8px;font-size:11.5px;font-weight:700;color:var(--mut);cursor:pointer}
+.botnav .tab .bi{font-size:21px;line-height:1}
+.botnav .tab.on{color:var(--leaf-d);border-top-color:var(--saffron)}
+/* ---- chat as a proper app screen ---- */
+#chat{display:flex;flex-direction:column;height:calc(100dvh - 118px - env(safe-area-inset-bottom,0px))}
+#chatMsgs{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;min-height:0;padding-right:2px}
+#chat .chatbar{position:static;flex:none;padding-top:8px}
+.loadearlier{display:block;margin:0 auto 10px;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:12.5px;color:var(--mut);cursor:pointer}
+/* ---- about me ---- */
+.meField{margin-bottom:12px}
+.meField label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#4a4139}
+.meField input,.meField textarea{width:100%;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit}
+.learnrow{display:flex;gap:8px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.learnrow:first-child{border-top:none}
+.learnrow input{flex:1;border:none;background:none;font-size:14px;color:var(--ink);padding:2px 0}
+.learnrow input:focus{outline:none;border-bottom:1.5px solid var(--leaf)}
+.learnrow .del{flex:none;background:none;border:none;color:#c08a6a;font-size:17px;cursor:pointer;padding:2px 6px}
+.learnempty{color:var(--mut);font-size:13.5px;padding:6px 0}
+</style></head><body>
+<header><div class="wrap"><span class="om">ॐ</span><h1 id="hdrTitle">Your Guide</h1></div></header>
+<main class="wrap">
+ <section id="today">
+   <div id="todayNoProfile" class="hide"><p class="lead">This is your daily home — a routine made for your body type, plus a 30-second check-in so your guide learns how your days really go. First take the quick <b>My Dosha</b> quiz.</p><button class="btn" onclick="go('quiz')">Take the quiz</button></div>
+   <div id="todayWrap" class="hide">
+     <div class="today-head">
+       <div><div id="todayDate" class="tdate"></div><div id="todayHello" class="thello"></div></div>
+       <div class="streak" id="streakBox"><div class="snum" id="streakNum">0</div><div class="slbl">day streak</div></div>
+     </div>
+     <div class="focuscard" id="focusCard">
+       <div class="focuslabel">This week · one small change</div>
+       <div id="focusLoading" class="hide"><p class="cite">Finding the one change to start with…</p></div>
+       <div id="focusBody">
+         <div class="focustext" id="focusText"></div>
+         <div class="focuswhy guid" id="focusWhy"></div>
+         <button class="donebtn" id="doneBtn"><span class="dtick">✓</span> <span id="doneLbl">I did this today</span></button>
+         <div class="focusweek"><div id="focusDots" class="weekstrip"></div><div id="focusDay" class="cite"></div></div>
+         <p class="onechange">We change just one thing at a time. Keep this for the week, then your guide brings in the next small step.</p>
+       </div>
+     </div>
+     <div class="card" id="nextCard">
+       <div class="ptitle">🎉 You kept this up for a week</div>
+       <p class="guid" style="margin:6px 0 12px">Nice work. Ready for the next small change, or would you like another week on this one?</p>
+       <div style="display:flex;gap:10px"><button class="btn" style="flex:1" id="nextBtn">Bring my next change</button><button class="btn ghost" style="flex:1" id="stayBtn">Another week on this</button></div>
+     </div>
+     <div class="notice">This is supportive daily guidance, not medical care. For anything ongoing or serious, or involving medication, pregnancy or a child, please see a qualified practitioner.</div>
+   </div>
+ </section>
+ <section id="quiz" class="hide">
+   <div id="quizIntro">
+     <p class="lead">Answer a few simple questions about your nature and body. Based on the classical descriptions in the Ashtanga Hridaya, we will show your dominant <b>dosha</b> — your Ayurvedic body-mind type — and practical steps to keep it in balance in everyday modern life.</p>
+     <div id="quizQs"></div>
+     <div style="margin:14px 0 8px"><button class="btn" id="quizGo" style="width:100%">See my dosha</button></div>
+     <p class="cite" style="text-align:center">Educational only — not a medical diagnosis.</p>
+   </div>
+   <div id="quizResult" class="hide"></div>
+ </section>
+ <section id="chat" class="hide">
+   <div id="chatNoProfile" class="hide"><p class="lead">First, take the quick <b>My Dosha</b> quiz so your guide can answer based on your body type and life. Then come back here to chat.</p><button class="btn" onclick="go('quiz')">Take the quiz</button></div>
+   <div id="chatWrap" class="hide">
+     <p class="lead" style="margin-bottom:8px">Ask your personal guide anything about getting healthy. It answers from the Ashtanga Hridaya, using your profile and past chats. Not medical advice.</p>
+     <div class="chips" id="chatQuick" style="margin-bottom:10px"></div>
+     <div id="chatTopic" class="topicchip hide"></div>
+     <div id="chatMsgs"></div>
+     <div class="chatbar"><textarea id="chatIn" rows="1" placeholder="Type your question…"></textarea><button class="btn" id="chatSend">Send</button></div>
+     <p class="cite" style="text-align:center;margin-top:6px"><a href="#" id="chatClear">Clear chat</a></p>
+   </div>
+ </section>
+ <section id="find" class="hide">
+   <p class="lead">Find guidance for any concern. Search, or tap a topic below. Each tip cites its chapter.</p>
+   <input type="search" id="q" placeholder="Search remedies, concerns, foods…">
+   <div class="filters">
+     <select id="fCat"><option value="">All categories</option></select>
+     <select id="fDosha"><option value="">All doshas</option><option>Vata</option><option>Pitta</option><option>Kapha</option></select>
+   </div>
+   <div id="findChips"></div>
+   <div id="browseList"></div>
+ </section>
+ <section id="me" class="hide">
+   <div id="meNoProfile" class="hide"><p class="lead">Take the quick dosha quiz first, then this becomes your personal profile — your answers and everything your guide learns about you, all editable.</p><button class="btn" onclick="go('quiz')">Take the quiz</button></div>
+   <div id="meWrap" class="hide">
+     <div class="card">
+       <div class="ptitle" id="meDosha"></div>
+       <div class="guid" id="meDoshaNote"></div>
+       <button class="btn ghost" id="meRetake" style="margin-top:12px">Retake the dosha quiz</button>
+     </div>
+     <div class="card">
+       <div class="ptitle">Your life right now</div>
+       <p class="cite" style="margin:2px 0 12px">Edit any answer. Your guide uses these to stay personal.</p>
+       <div id="meIntake"></div>
+       <button class="btn" id="meSave" style="width:100%;margin-top:4px">Save my answers</button>
+       <div id="meSaved" class="cite hide" style="text-align:center;margin-top:8px;color:var(--leaf-d)">✓ Saved</div>
+     </div>
+     <div class="card">
+       <div class="ptitle">What your guide has learned about you</div>
+       <p class="cite" style="margin:2px 0 12px">As you chat, it remembers things about you and uses them. Edit or delete anything here.</p>
+       <div id="meLearn"></div>
+       <div style="display:flex;gap:8px;margin-top:8px"><input id="meLearnAdd" type="text" placeholder="Add something about yourself…" style="flex:1;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;font-size:14px"><button class="btn ghost" id="meLearnAddBtn">Add</button></div>
+     </div>
+     <div class="card about">
+       <div class="ptitle">About &amp; source</div>
+       <p style="font-size:13.5px;margin:8px 0">Built from the <em>Ashtanga Hridaya</em>, <em>Sutrasthana</em>, a classical Ayurveda text by <b>Vagbhata</b>, over a thousand years old and in the public domain. All content is written in plain words; it is educational, not medical advice. Clinical therapies (cleansing, bloodletting, surgery, cautery) must only be done by a trained Ayurvedic physician. For personal care, see a registered practitioner.</p>
+     </div>
+   </div>
+ </section>
+ </section>
+</main>
+<nav class="botnav"><div class="wrap">
+<button class="tab on" data-t="chat"><span class="bi">💬</span><span>Chat</span></button>
+<button class="tab" data-t="today"><span class="bi">🌿</span><span>Routine</span></button>
+<button class="tab" data-t="find"><span class="bi">🔎</span><span>Remedies</span></button>
+<button class="tab" data-t="me"><span class="bi">👤</span><span>About me</span></button>
+</div></nav>
+<script src="data.js"></script>
+<script>
+const AH=window.AH||{chapters:[],remedies:[],foods:[]};
+(AH.remedies||[]).forEach((r,i)=>{r.__i=i;});
+const IMAGES=(AH.images)||{};
+const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+const sel=new Set();
+// tabs
+const TITLES={chat:'Your Guide',today:'Routine',find:'Remedies',me:'About me',quiz:'Your Dosha'};
+function go(tab){
+  $$('.botnav .tab').forEach(x=>x.classList.toggle('on',x.dataset.t===tab));
+  ['today','quiz','chat','find','me'].forEach(id=>$('#'+id).classList.toggle('hide',id!==tab));
+  $('#hdrTitle').textContent=TITLES[tab]||'Your Guide';
+  if(tab==='chat') openChat();
+  if(tab==='today') openToday();
+  if(tab==='me') renderMe();
+  if(tab!=='chat') window.scrollTo(0,0);
+}
+$$('.botnav .tab').forEach(t=>t.onclick=()=>go(t.dataset.t));
+// ---- REMEDIES: concern chips (tap to search) ----
+function buildChips(){
+  const byCat={};
+  AH.remedies.forEach((r)=>{ if(r.category==='Clinical Therapy')return; (byCat[r.category]=byCat[r.category]||[]).push(r.problem); });
+  const area=$('#findChips'); if(!area)return; area.innerHTML='';
+  Object.keys(byCat).sort().forEach(cat=>{
+    const seen=new Set(); const chips=byCat[cat].filter(p=>{const k=p.toLowerCase();if(seen.has(k))return false;seen.add(k);return true;}).slice(0,16);
+    const html=chips.map(p=>`<span class="chip" data-q="${esc(p)}">${esc(p)}</span>`).join('');
+    area.insertAdjacentHTML('beforeend',`<div class="catblock"><h3>${esc(cat)}</h3><div class="chips">${html}</div></div>`);
+  });
+  $$('#findChips .chip').forEach(c=>c.onclick=()=>{$('#q').value=c.dataset.q;$('#fCat').value='';$('#fDosha').value='';browse();$('#browseList').scrollIntoView({behavior:'smooth',block:'start'});});
+}
+// ---- remedy card ----
+function card(r){
+  const clin=/supervis|physician|clinical|professional|trained|hospital|only be done|not be attempted|not attempt/i.test(r.guidance||'')||r.category==='Clinical Therapy'?'<span class="tag clin">clinical / physician only</span>':'';
+  const ask=(r.__i!=null)?`<button class="askbtn" data-i="${r.__i}">💬 Ask about this</button>`:'';
+  return `<div class="card"><div class="ptitle">${esc(r.problem)}</div>
+   <div class="meta"><span class="tag">${esc(r.category||'General')}</span>${r.dosha&&r.dosha!=='—'?`<span class="tag dosha">${esc(r.dosha)}</span>`:''}${clin}</div>
+   ${r.signs?`<div class="guid"><b>Signs:</b> ${esc(r.signs)}</div>`:''}
+   <div class="guid">${esc(r.guidance)}</div>
+   <div class="cite">Ashtanga Hridaya, Sutrasthana — Chapter ${esc(String(r.chapter||'—'))}</div>
+   ${ask}</div>`;
+}
+function askAboutProblem(i){
+  const r=AH.remedies[+i]; if(!r) return;
+  window.__topic={problem:r.problem,guidance:r.guidance,chapter:r.chapter,category:r.category};
+  go('chat');
+  setTimeout(()=>sendChat(`Tell me more about "${r.problem}" and how to apply it to my own life.`),250);
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.askbtn');if(b)askAboutProblem(b.dataset.i);});
+function fillCats(){const cats=[...new Set(AH.remedies.map(r=>r.category))].sort();$('#fCat').insertAdjacentHTML('beforeend',cats.map(c=>`<option>${esc(c)}</option>`).join(''));}
+function browse(){
+  const q=($('#q').value||'').toLowerCase(),c=$('#fCat').value,d=$('#fDosha').value;
+  const list=AH.remedies.filter(r=>{
+    const okC=!c||r.category===c; const okD=!d||(r.dosha||'').includes(d);
+    const hay=(r.problem+' '+r.guidance+' '+(r.signs||'')+' '+(r.category||'')).toLowerCase();
+    return okC&&okD&&(!q||hay.includes(q));
+  });
+  const none=!q&&!c&&!d; const show=none?list.slice(0,25):list;
+  const head=none?'<p class="cite" style="margin-bottom:10px">Search above, or tap any topic to see its full guidance.</p>':`<p class="cite" style="margin-bottom:10px">${list.length} result${list.length!==1?'s':''}${list.length>show.length?' (showing '+show.length+')':''}.</p>`;
+  $('#browseList').innerHTML=head+(show.length?show.map(card).join(''):'<p class="empty">Nothing matches. Try another word.</p>');
+}
+['input','change'].forEach(ev=>{$('#q').addEventListener(ev,browse);$('#fCat').addEventListener(ev,browse);$('#fDosha').addEventListener(ev,browse);});
+function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+// ================= DOSHA QUIZ + LIFESTYLE INTAKE =================
+const QUIZ=[
+ ["Your body build",[["Thin, light, hard to gain weight","V"],["Medium, well-proportioned, warm","P"],["Solid, heavier, gains weight easily","K"]]],
+ ["Your skin",[["Dry, rough, cool, thin","V"],["Warm, reddish, prone to rashes","P"],["Thick, soft, moist, cool","K"]]],
+ ["Your appetite & digestion",[["Irregular, variable, often gassy/bloated","V"],["Strong, sharp, get irritable when hungry","P"],["Steady but slow, can skip meals easily","K"]]],
+ ["Your bowels",[["Dry, hard, irregular, constipation-prone","V"],["Soft, loose, frequent","P"],["Regular, heavy, slow","K"]]],
+ ["Weather you dislike",[["Cold, dry, windy","V"],["Hot, humid","P"],["Cold, damp, cloudy","K"]]],
+ ["Your sleep",[["Light, easily disturbed","V"],["Moderate, sound","P"],["Deep, long, hard to wake","K"]]],
+ ["Your mind, usually",[["Quick, imaginative, tends to worry/anxiety","V"],["Sharp, focused, can get irritable","P"],["Calm, steady, slow to upset","K"]]],
+ ["Your memory",[["Learn fast, forget fast","V"],["Sharp and clear","P"],["Slow to learn, rarely forget","K"]]],
+ ["Your energy",[["Comes in bursts, then tire","V"],["Moderate and driven","P"],["Steady, strong stamina","K"]]],
+ ["Under stress you become",[["Anxious, scattered","V"],["Angry, intense","P"],["Withdrawn, quiet","K"]]],
+ ["Your speech & pace",[["Fast, talkative","V"],["Precise, convincing","P"],["Slow, calm","K"]]],
+ ["Your hair / body tendency",[["Dry, thin, brittle","V"],["Fine, early graying, warm","P"],["Thick, oily, lustrous","K"]]],
+];
+const INTAKE=[
+ {k:"wake",label:"What time do you usually wake up?",type:"text",ph:"e.g. 7:30 am"},
+ {k:"sleep",label:"What time do you usually sleep?",type:"text",ph:"e.g. 12:30 am"},
+ {k:"meals",label:"Your usual meal times?",type:"text",ph:"e.g. breakfast 10, lunch 3, dinner 10:30"},
+ {k:"regular",label:"How regular are your meal times?",type:"opt",opts:["Very regular","Somewhat irregular","Very irregular / often late"]},
+ {k:"exercise",label:"How much do you exercise, and what kind?",type:"text",ph:"e.g. almost none / walk 20 min / gym 3x week"},
+ {k:"mental",label:"How is your mental state these days?",type:"text",ph:"e.g. stressed, low motivation, calm, anxious…"},
+ {k:"physical",label:"How is your physical state / energy?",type:"text",ph:"e.g. tired, heavy, weak digestion, good…"},
+ {k:"likes",label:"What do you enjoy / are interested in?",type:"text",ph:"e.g. reading, cooking, walking in nature"},
+ {k:"dislikes",label:"What do you avoid or dislike?",type:"text",ph:"e.g. early mornings, cold food, crowds"},
+ {k:"problems",label:"What are the problems you want help with? (your own words)",type:"area",ph:"e.g. I'm not exercising or meditating, eating late, feel my health slipping and don't know why…"},
+];
+const answers={}; const intake={};
+function renderQuiz(){
+  const box=$('#quizQs'); box.innerHTML='';
+  box.insertAdjacentHTML('beforeend',`<h3 style="color:var(--saffron);font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin:4px 0 10px">Part 1 · Your nature</h3>`);
+  QUIZ.forEach((q,i)=>{
+    const opts=q[1].map((o,j)=>`<label class="qopt"><input type="radio" name="q${i}" value="${o[1]}"> ${esc(o[0])}</label>`).join('');
+    box.insertAdjacentHTML('beforeend',`<div class="qcard"><div class="qq">${i+1}. ${esc(q[0])}</div>${opts}</div>`);
+  });
+  box.insertAdjacentHTML('beforeend',`<h3 style="color:var(--saffron);font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px">Part 2 · Your life right now</h3>`);
+  INTAKE.forEach(f=>{
+    let ctl;
+    if(f.type==='opt') ctl=`<div class="qopts">${f.opts.map(o=>`<label class="qopt"><input type="radio" name="in_${f.k}" value="${esc(o)}"> ${esc(o)}</label>`).join('')}</div>`;
+    else if(f.type==='area') ctl=`<textarea id="in_${f.k}" rows="4" placeholder="${esc(f.ph)}" style="width:100%;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-size:14px"></textarea>`;
+    else ctl=`<input id="in_${f.k}" type="text" placeholder="${esc(f.ph)}" style="width:100%;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-size:14px">`;
+    box.insertAdjacentHTML('beforeend',`<div class="qcard"><div class="qq">${esc(f.label)}</div>${ctl}</div>`);
+  });
+}
+function readIntake(){
+  INTAKE.forEach(f=>{
+    if(f.type==='opt'){const el=document.querySelector(`input[name="in_${f.k}"]:checked`);intake[f.k]=el?el.value:'';}
+    else intake[f.k]=($('#in_'+f.k)?.value||'').trim();
+  });
+}
+const DOSHA={V:{name:"Vata",el:"Air & Space"},P:{name:"Pitta",el:"Fire & Water"},K:{name:"Kapha",el:"Earth & Water"}};
+const BALANCE={
+ V:{favour:"warm, cooked, moist, slightly oily, grounding foods; sweet, sour and salty tastes; warm drinks; oil self-massage (abhyanga); a steady daily routine; early, calm nights.",avoid:"cold, dry, raw and leftover food; skipping meals; irregular timings; too much travel, screens and stimulation; staying up late.",note:"Vata is dry, light, cold and mobile, so it is calmed by warmth, oil, nourishment and routine (opposite qualities)."},
+ P:{favour:"cool, fresh, mild foods; sweet, bitter and astringent tastes; plenty of water; calm surroundings; moderate pace; time in nature.",avoid:"hot, spicy, sour, fried and salty food; alcohol; skipping meals; the midday sun; overwork, anger and over-competition.",note:"Pitta is hot, sharp and intense, so it is calmed by coolness, calm and moderation."},
+ K:{favour:"warm, light, dry, well-spiced food; pungent, bitter and astringent tastes; vigorous daily exercise; early rising; variety and new activity.",avoid:"heavy, oily, cold, sweet and salty food; overeating; daytime sleep; sitting idle for long.",note:"Kapha is heavy, cold, slow and stable, so it is balanced by lightness, warmth, dryness and movement."},
+};
+function computeResult(){
+  // dosha tally
+  const t={V:0,P:0,K:0};
+  QUIZ.forEach((q,i)=>{const el=document.querySelector(`input[name="q${i}"]:checked`);if(el)t[el.value]++;});
+  const total=t.V+t.P+t.K;
+  if(total<Math.ceil(QUIZ.length*0.6)){alert('Please answer a few more of the nature questions in Part 1.');return;}
+  readIntake();
+  const sorted=Object.keys(t).sort((a,b)=>t[b]-t[a]);
+  const top=sorted[0]; const second=t[sorted[1]]>=t[top]-1&&t[sorted[1]]>0?sorted[1]:null;
+  // lifestyle flags (book logic)
+  const flags=[];
+  const late=/irregular|late/i.test(intake.regular)|| /10|11|12|1 ?am|late/i.test(intake.meals);
+  if(late) flags.push("Irregular or late meals weaken and unsettle your digestive fire (Agni) and aggravate Vata. The book is firm that food should be taken at proper times, when the previous meal is digested.");
+  if(/none|no |hardly|not exercis|don.t exercis|rarely/i.test(intake.exercise)) flags.push("Little movement lets Kapha and heaviness build up, dulling energy and digestion. Daily exercise to about half your capacity is advised.");
+  if(/late|12|1 ?am|2 ?am|after mid/i.test(intake.sleep)) flags.push("Late nights disturb Vata and next-day energy; the classical routine favours early sleep and early rising.");
+  const prof={dosha:top,doshaName:DOSHA[top].name,second:second?DOSHA[second].name:null,tally:t,intake:{...intake},flags};
+  localStorage.setItem('ah_profile',JSON.stringify(prof)); localStorage.setItem('ah_done','1');
+  renderResult(prof);
+}
+function renderResult(p){
+  const b=BALANCE[p.dosha]; const dz=DOSHA[p.dosha];
+  const steps=[];
+  steps.push(`<b>Favour:</b> ${b.favour}`);
+  steps.push(`<b>Reduce:</b> ${b.avoid}`);
+  // concrete modern routine
+  steps.push(`<b>A simple daily rhythm:</b> rise early and don't go back to sleep; drink warm water; move your body each morning (even 15–20 min); eat your main meal at midday when digestion is strongest; keep meal times regular; finish dinner light and early; wind down screens before a calm, early night.`);
+  const flagsHtml=p.flags.length?`<div class="card"><div class="ptitle">What may be getting in your way</div>${p.flags.map(f=>`<div class="guid" style="margin:6px 0">• ${esc(f)}</div>`).join('')}</div>`:'';
+  const safety=`<div class="notice"><b>Please read.</b> This is traditional Ayurvedic guidance for everyday wellbeing, not medical advice. For ongoing low mood, anxiety, depression, or any serious or worsening problem — or anything involving medication, pregnancy or a child's health — please see a qualified doctor, mental-health professional, or registered Ayurvedic practitioner. Never stop or change prescribed medicine on your own.</div>`;
+  $('#quizResult').innerHTML=`
+   ${SVG_DOSHAS}
+   <div class="card"><div class="ptitle">Your dominant dosha: ${dz.name} (${dz.el})${p.second?` — with some ${p.second}`:''}</div>
+     <div class="guid">${esc(b.note)}</div></div>
+   ${flagsHtml}
+   <div class="card"><div class="ptitle">Your step-by-step approach for modern life</div>${steps.map(s=>`<div class="guid" style="margin:7px 0">${s}</div>`).join('')}
+     <div class="cite">Grounded in Ashtanga Hridaya, Sutrasthana — Ch 1-3 (routine, season), 10-13 (tastes & doshas)</div></div>
+   <div class="card" style="text-align:center">
+     <button class="btn" id="aiBtn" style="width:100%">Get my deeper personal plan (AI + the book)</button>
+     <p class="cite" style="margin-top:8px">Sends your answers to be matched against the book for tailored guidance.</p>
+     <div id="aiOut" style="margin-top:12px;text-align:left"></div>
+   </div>
+   <button class="btn" style="width:100%;margin-bottom:10px" onclick="go('chat')">Chat with your guide &rarr;</button>
+   ${safety}
+   <div style="display:flex;gap:10px;margin:6px 0 10px">
+     <button class="btn ghost" style="flex:1" onclick="go('browse')">See all remedies</button>
+     <button class="btn ghost" style="flex:1" id="retake">Retake quiz</button>
+   </div>`;
+  $('#quizIntro').classList.add('hide'); $('#quizResult').classList.remove('hide');
+  $('#retake').onclick=()=>{localStorage.removeItem('ah_done');location.reload();};
+  $('#aiBtn').onclick=()=>getAIPlan(p);
+  window.scrollTo(0,0);
+}
+async function getAIPlan(p){
+  const out=$('#aiOut'); const btn=$('#aiBtn');
+  btn.disabled=true; btn.textContent='Thinking with the book…'; out.innerHTML='<p class="cite">Matching your life to the Ashtanga Hridaya…</p>';
+  try{
+    const res=await fetch('/api/plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({profile:p})});
+    if(!res.ok) throw new Error('server '+res.status);
+    const data=await res.json();
+    out.innerHTML=`<div class="guid" style="white-space:pre-wrap">${esc(data.plan||'No plan returned.')}</div><div class="cite" style="margin-top:8px">AI-generated from your answers, grounded in the Ashtanga Hridaya. Not medical advice — see a practitioner for anything serious.</div>`;
+  }catch(e){
+    out.innerHTML=`<p class="cite">The deeper AI plan isn't available right now (${esc(e.message)}). Your book-based plan above still stands. Please try again later.</p>`;
+  }
+  btn.disabled=false; btn.textContent='Get my deeper personal plan (AI + the book)';
+}
+$('#quizGo').onclick=computeResult;
+// ================= TODAY: one small change a week + gentle progress =================
+function todayKey(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function loadDays(){try{return JSON.parse(localStorage.getItem('ah_days')||'{}');}catch(e){return {};}}
+function saveDays(o){try{localStorage.setItem('ah_days',JSON.stringify(o));}catch(e){}}
+function dayRec(o,k){return o[k]||(o[k]={});}
+function loadFocus(){try{return JSON.parse(localStorage.getItem('ah_focus')||'null');}catch(e){return null;}}
+function saveFocus(f){try{localStorage.setItem('ah_focus',JSON.stringify(f));}catch(e){}}
+function loadMastered(){try{return JSON.parse(localStorage.getItem('ah_mastered')||'[]');}catch(e){return [];}}
+function saveMastered(a){try{localStorage.setItem('ah_mastered',JSON.stringify(a.slice(-24)));}catch(e){}}
+// full dosha routine kept only as optional reference
+function buildRoutine(p){
+  const d=p.dosha, i=p.intake||{};
+  const move={V:["Gentle movement","A 15–20 min walk or easy stretching — move to about half your capacity, never to exhaustion. (Ch 2, vyayama)"],
+              P:["Moderate exercise, out of peak heat","A brisk walk or swim in the cool of morning or evening — steady, not overheated. (Ch 2)"],
+              K:["Vigorous movement","Work up a real sweat — a longer brisk walk, stairs, or a proper workout. Kapha needs the most movement. (Ch 2)"]}[d]||["Move your body","15–20 min of activity. (Ch 2)"];
+  const items=[
+    {id:'wake',time:'Morning',title:'Wake early, stay up',why:"Rise around sunrise and don't fall back asleep — early rising steadies the whole day. (Ch 2)"},
+    {id:'water',time:'Morning',title:'Warm water first',why:"A cup of warm water on waking gently wakes digestion and helps the bowels move. (Ch 2)"},
+    {id:'move',time:'Morning',title:move[0],why:move[1]},
+    {id:'midday',time:'Midday',title:'Main meal at midday',why:"Eat your largest meal when the sun and your digestive fire are strongest. (Ch 8, meal conduct)"},
+    {id:'dinner',time:'Evening',title:'Light, early dinner',why:"Finish a lighter dinner well before bed so the last meal is digested before sleep. (Ch 8)"},
+    {id:'winddown',time:'Night',title:'Calm, early night',why:"Screens off, quiet down, sleep at a regular early hour — late nights unsettle Vata and tomorrow's energy. (Ch 2)"},
+  ];
+  if(d==='V') items.splice(2,0,{id:'oil',time:'Morning',title:'Warm oil self-massage',why:"A few minutes of warm-oil self-massage (abhyanga) grounds Vata — dryness, cold and anxiety. (Ch 2)"});
+  if(d==='P') items.splice(3,0,{id:'cool',time:'Midday',title:'Stay cool & pause',why:"Avoid the harsh midday sun and take one calm pause — Pitta heats up with sun, hunger and overwork. (Ch 3)"});
+  if(d==='K') items.splice(4,0,{id:'noday',time:'Daytime',title:'No daytime sleep',why:"Skip the daytime nap and keep moving — daytime sleep and idleness build Kapha heaviness. (Ch 7)"});
+  return items;
+}
+function daysBetween(a,b){return Math.round((new Date(b+'T00:00')-new Date(a+'T00:00'))/86400000);}
+function focusDay(f){ if(!f||!f.start) return 1; return Math.max(1, daysBetween(f.start,todayKey())+1); }
+function openToday(){
+  const p=getProfile();
+  $('#todayNoProfile').classList.toggle('hide',!!p);
+  $('#todayWrap').classList.toggle('hide',!p);
+  if(!p) return;
+  const now=new Date();
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const hr=now.getHours();
+  const greet=hr<12?'Good morning':hr<17?'Good afternoon':'Good evening';
+  $('#todayDate').textContent=days[now.getDay()]+' · '+now.toLocaleDateString(undefined,{day:'numeric',month:'long'});
+  $('#todayHello').textContent=greet+` — your ${p.doshaName} day`;
+  $('#streakNum').textContent=calcStreak();
+  const f=loadFocus();
+  if(f && f.text){ renderFocus(f); } else { requestFocus(p,false); }
+}
+function renderFocus(f){
+  $('#focusLoading').classList.add('hide'); $('#focusBody').classList.remove('hide');
+  $('#focusText').textContent=f.text;
+  $('#focusWhy').innerHTML=esc(f.why||'')+(f.chapter?` <span class="cite">(Ashtanga Hridaya, Ch ${esc(f.chapter)})</span>`:'');
+  const o=loadDays(),k=todayKey(),rec=dayRec(o,k),done=!!rec.fd;
+  const btn=$('#doneBtn'); btn.classList.toggle('on',done); $('#doneLbl').textContent=done?'Done today':'I did this today';
+  const labels=['S','M','T','W','T','F','S']; let html='';
+  for(let i=6;i>=0;i--){const dt=new Date();dt.setDate(dt.getDate()-i);const kk=todayKey(dt);const r=o[kk];const dn=r&&r.fd;const isT=i===0;
+    html+=`<div class="wday ${isT?'wtoday':''}"><div class="wdot"><span style="height:${dn?100:0}%"></span></div><div class="wlbl">${labels[dt.getDay()]}</div></div>`;}
+  $('#focusDots').innerHTML=html;
+  const day=focusDay(f); $('#focusDay').textContent=`Day ${Math.min(day,7)} of 7`;
+  $('#nextCard').style.display = day>=7 ? 'block':'none';
+}
+function dayActive(rec){return !!(rec&&rec.fd);}
+function calcStreak(){const o=loadDays();let n=0;const d=new Date();if(!dayActive(o[todayKey(d)]))d.setDate(d.getDate()-1);for(;;){const k=todayKey(d);if(dayActive(o[k])){n++;d.setDate(d.getDate()-1);}else break;if(n>999)break;}return n;}
+async function requestFocus(p,advancing){
+  $('#focusBody').classList.add('hide'); $('#focusLoading').classList.remove('hide'); $('#nextCard').style.display='none';
+  const mastered=loadMastered(); const old=loadFocus();
+  if(advancing && old && old.text){ mastered.push(old.text); saveMastered(mastered); }
+  let hist=[]; try{hist=JSON.parse(localStorage.getItem('ah_chat')||'[]');}catch(e){}
+  let f=null;
+  try{
+    const res=await fetch('/api/focus',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({profile:p,log:summarizeLog(),mastered,history:hist})});
+    if(res.ok){const d=await res.json(); if(d&&d.text) f={text:d.text,why:d.why,chapter:d.chapter,start:todayKey(),source:'ai'};}
+  }catch(e){}
+  if(!f){ f=focusFallback(p,mastered); }
+  saveFocus(f); renderFocus(f);
+}
+function focusFallback(p,mastered){
+  const i=p.intake||{}; const has=t=>mastered.some(m=>String(m).toLowerCase().includes(t));
+  const cands=[];
+  if(/irregular|late/i.test(i.regular||'')||/10|11|12|late/i.test(i.meals||'')) cands.push({t:'dinner',text:'Eat dinner a little earlier tonight',why:'Finishing dinner earlier, before bed, lets the last meal digest and steadies your digestive fire (Agni).',chapter:'8'});
+  if(/none|no |hardly|not exercis|rarely/i.test(i.exercise||'')) cands.push({t:'walk',text:'Take a 5-minute walk after lunch',why:'A short daily walk gently lifts energy and helps digestion, without tiring you out.',chapter:'2'});
+  if(/late|12|1 ?am|2 ?am/i.test(i.sleep||'')) cands.push({t:'sleep',text:'Lights down 15 minutes earlier',why:'Winding down a little earlier settles Vata and protects tomorrow’s energy.',chapter:'2'});
+  cands.push({t:'water',text:'Drink a cup of warm water on waking',why:'Warm water in the morning gently wakes digestion and helps the bowels move.',chapter:'2'});
+  const pick=cands.find(c=>!has(c.t))||cands[0];
+  return {text:pick.text,why:pick.why,chapter:pick.chapter,start:todayKey(),source:'fallback'};
+}
+function summarizeLog(){
+  const o=loadDays(); const f=loadFocus(); const out=[];
+  if(f&&f.text) out.push(`Current one-change focus: "${f.text}" (day ${focusDay(f)} of the week).`);
+  const seq=[]; for(let i=6;i>=0;i--){const dt=new Date();dt.setDate(dt.getDate()-i);const k=todayKey(dt);const r=o[k];if(!r)continue;seq.push(`${i===0?'today':i+'d ago'}: ${r.fd?'did it':'missed'}`);}
+  if(seq.length) out.push('Recent days — '+seq.join(', ')+'.');
+  const m=loadMastered(); if(m.length) out.push('Already mastered: '+m.join('; ')+'.');
+  return out.join(' ');
+}
+function askGuideFromToday(){ go('chat'); const f=loadFocus(); const q=f&&f.text?`My one change this week is "${f.text}". How am I doing, and any tips to make it easier?`:'What one small change should I focus on this week?'; setTimeout(()=>sendChat(q),250); }
+document.addEventListener('click',e=>{
+  const t=e.target.closest('#doneBtn,#nextBtn,#stayBtn'); if(!t)return;
+  if(t.id==='doneBtn'){const o=loadDays(),k=todayKey(),rec=dayRec(o,k);rec.fd=rec.fd?0:1;if(!rec.fd)delete rec.fd;saveDays(o);const f=loadFocus();renderFocus(f);$('#streakNum').textContent=calcStreak();}
+  if(t.id==='nextBtn'){requestFocus(getProfile(),true);}
+  if(t.id==='stayBtn'){const f=loadFocus();if(f){f.start=todayKey();saveFocus(f);}$('#nextCard').style.display='none';renderFocus(f);}
+});
+// ---- original inline SVG teaching graphics (drawn in code) ----
+const SVG_DOSHAS=`<figure class="figure"><svg viewBox="0 0 600 220" width="100%" role="img" aria-label="The three doshas">
+<rect width="600" height="220" rx="16" fill="#fffdf8" stroke="#e7ddc9"/>
+<!-- Vata: air -->
+<g transform="translate(100,95)"><circle r="52" fill="#eef4ee"/>
+<path d="M-28,-6 q24,-18 48,0 q-10,10 -28,6 M-30,12 q30,-14 54,2 q-12,12 -34,6 M-18,-22 q18,-10 34,2" fill="none" stroke="#3f7a4e" stroke-width="4" stroke-linecap="round"/></g>
+<text x="100" y="172" text-anchor="middle" font-family="Georgia" font-size="19" fill="#2c5a39" font-weight="bold">Vata</text>
+<text x="100" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#7a6f62">Air &amp; Space</text>
+<!-- Pitta: fire -->
+<g transform="translate(300,95)"><circle r="52" fill="#fbede0"/>
+<path d="M0,-34 C18,-10 22,2 10,18 C22,10 24,-6 2,-36 C-6,-16 -18,-8 -14,8 C-26,-6 -16,-26 0,-34 Z" fill="#c9741f"/>
+<path d="M0,-14 C9,-2 10,6 3,16 C-7,8 -8,-2 0,-14 Z" fill="#e8a24a"/></g>
+<text x="300" y="172" text-anchor="middle" font-family="Georgia" font-size="19" fill="#2c5a39" font-weight="bold">Pitta</text>
+<text x="300" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#7a6f62">Fire &amp; Water</text>
+<!-- Kapha: water+earth -->
+<g transform="translate(500,95)"><circle r="52" fill="#e9f0ef"/>
+<path d="M0,-30 C20,0 22,24 0,24 C-22,24 -20,0 0,-30 Z" fill="#4a86a8"/>
+<path d="M-6,2 q6,-10 14,-8 q-2,10 -14,8 Z" fill="#8fc0a9"/></g>
+<text x="500" y="172" text-anchor="middle" font-family="Georgia" font-size="19" fill="#2c5a39" font-weight="bold">Kapha</text>
+<text x="500" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#7a6f62">Earth &amp; Water</text>
+</svg><figcaption>The three doshas — the forces of Air, Fire and Earth-Water that shape body and mind</figcaption></figure>`;
+const TASTES=[["Sweet","#e0b25a"],["Sour","#cf8b3a"],["Salty","#9bb3c9"],["Pungent","#c0532f"],["Bitter","#4f7a4a"],["Astringent","#7a6b9a"]];
+const SVG_TASTES=`<figure class="figure"><svg viewBox="0 0 600 150" width="100%" role="img" aria-label="The six tastes">
+<rect width="600" height="150" rx="16" fill="#fffdf8" stroke="#e7ddc9"/>
+${TASTES.map((t,i)=>{const x=50+i*92;return `<circle cx="${x}" cy="60" r="30" fill="${t[1]}" opacity="0.9"/><text x="${x}" y="115" text-anchor="middle" font-family="Arial" font-size="13" fill="#2a2420" font-weight="bold">${t[0]}</text>`;}).join('')}
+<text x="300" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="#7a6f62">The six tastes (Rasa) — each balances or aggravates the doshas</text>
+</svg><figcaption>The six tastes of Ayurveda</figcaption></figure>`;
+// ================= CHAT WITH YOUR GUIDE =================
+const QUICK=["My ideal day","What should I avoid","Movement for me","Foods for me","Help with my problems","Why is my health going down"];
+let chatHist=[];
+function loadHist(){try{chatHist=JSON.parse(localStorage.getItem('ah_chat')||'[]');}catch(e){chatHist=[];}}
+function saveHist(){try{localStorage.setItem('ah_chat',JSON.stringify(chatHist.slice(-60)));}catch(e){}}
+function getProfile(){try{return JSON.parse(localStorage.getItem('ah_profile')||'null');}catch(e){return null;}}
+let chatShown=10;
+function openChat(){
+  const p=getProfile();
+  $('#chatNoProfile').classList.toggle('hide',!!p);
+  $('#chatWrap').classList.toggle('hide',!p);
+  if(!p) return;
+  $('#chatQuick').innerHTML=QUICK.map(q=>`<span class="chip" data-q="${esc(q)}">${esc(q)}</span>`).join('');
+  $$('#chatQuick .chip').forEach(c=>c.onclick=()=>sendChat(c.dataset.q));
+  loadHist(); chatShown=10; renderMsgs(); renderTopic();
+  if(!chatHist.length){ addMsg('bot',`Namaste 🙏 I'm your personal guide, grounded in the Ashtanga Hridaya and your ${p.doshaName||''} profile. Ask me anything, or tap a button above to begin. (This is supportive guidance, not medical advice.)`,false); }
+}
+function renderTopic(){
+  const t=$('#chatTopic'); const tp=window.__topic;
+  if(tp&&tp.problem){ t.innerHTML=`Talking about: <b>${esc(tp.problem)}</b>${tp.chapter?` <span class="cite">(Ch ${esc(String(tp.chapter))})</span>`:''} <a href="#" id="clrTopic">✕</a>`; t.classList.remove('hide'); $('#clrTopic').onclick=(e)=>{e.preventDefault();window.__topic=null;renderTopic();}; }
+  else t.classList.add('hide');
+}
+function renderMsgs(scroll=true){
+  const el=$('#chatMsgs'); if(!el)return;
+  const total=chatHist.length, start=Math.max(0,total-chatShown);
+  let html = start>0 ? `<button class="loadearlier" id="loadEarlier">Show earlier messages</button>` : '';
+  html += chatHist.slice(start).map(m=>`<div class="msg ${m.role==='user'?'user':'bot'}">${esc(m.content)}</div>`).join('');
+  el.innerHTML=html;
+  const le=$('#loadEarlier'); if(le)le.onclick=()=>{const h0=el.scrollHeight;chatShown=Math.min(chatShown+15,chatHist.length);renderMsgs(false);el.scrollTop=el.scrollHeight-h0;};
+  if(scroll)scrollChat();
+}
+function addMsg(role,content,save=true){chatHist.push({role,content});if(save)saveHist();if(chatShown<12)chatShown=12;renderMsgs();}
+function scrollChat(){const el=$('#chatMsgs');if(el)requestAnimationFrame(()=>{el.scrollTop=el.scrollHeight;});}
+async function sendChat(text){
+  const msg=(text||$('#chatIn').value||'').trim(); if(!msg)return;
+  $('#chatIn').value='';
+  addMsg('user',msg);
+  const tid=chatHist.length;
+  $('#chatMsgs').insertAdjacentHTML('beforeend','<div class="msg bot think" id="thinking">consulting the book…</div>');scrollChat();
+  try{
+    const p=getProfile();
+    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({profile:p,history:chatHist.slice(0,-1),message:msg,log:(typeof summarizeLog==='function'?summarizeLog():''),topic:window.__topic||null,learned:loadLearn().map(l=>l.text)})});
+    $('#thinking')?.remove();
+    if(!res.ok)throw new Error('server '+res.status);
+    const data=await res.json();
+    addMsg('bot',data.reply||'Sorry, I could not answer that. Please try again.');
+    scheduleLearn(p); // keep learning about the user in the background
+  }catch(e){ $('#thinking')?.remove(); addMsg('bot','I could not reach your guide just now ('+e.message+'). Please try again in a moment. Your saved plan in the My Dosha tab still stands.'); }
+}
+$('#chatSend').onclick=()=>sendChat();
+$('#chatIn').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}});
+$('#chatClear').onclick=(e)=>{e.preventDefault();if(confirm('Clear this chat?')){chatHist=[];chatShown=10;saveHist();openChat();}};
+// ================= WHAT THE GUIDE LEARNS ABOUT YOU =================
+function loadLearn(){try{return JSON.parse(localStorage.getItem('ah_learn')||'[]');}catch(e){return [];}}
+function saveLearn(a){try{localStorage.setItem('ah_learn',JSON.stringify(a.slice(0,20)));}catch(e){}}
+function loadRemoved(){try{return JSON.parse(localStorage.getItem('ah_learn_removed')||'[]');}catch(e){return [];}}
+function saveRemoved(a){try{localStorage.setItem('ah_learn_removed',JSON.stringify(a.slice(-60)));}catch(e){}}
+const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
+let learnTimer=null,learning=false;
+function scheduleLearn(p){clearTimeout(learnTimer);learnTimer=setTimeout(()=>requestLearn(p),2000);}
+async function requestLearn(p){
+  if(learning)return; learning=true;
+  try{
+    let hist=[];try{hist=JSON.parse(localStorage.getItem('ah_chat')||'[]');}catch(e){}
+    const res=await fetch('/api/learn',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({profile:p,history:hist})});
+    if(res.ok){const d=await res.json(); const facts=Array.isArray(d.facts)?d.facts:[];
+      const cur=loadLearn(); const rm=loadRemoved(); const have=new Set(cur.map(x=>norm(x.text)));
+      facts.forEach(f=>{const n=norm(f); if(f && !have.has(n) && !rm.includes(n)){cur.push({text:String(f).slice(0,160),src:'ai'}); have.add(n);}});
+      saveLearn(cur);
+      if(!$('#me').classList.contains('hide')) renderLearn();
+    }
+  }catch(e){}
+  learning=false;
+}
+// ================= ABOUT ME =================
+const INTAKE_LABELS={wake:'Wake time',sleep:'Sleep time',meals:'Meal times',regular:'How regular are meals',exercise:'Exercise',mental:'Mental state',physical:'Physical state / energy',likes:'Enjoys / interested in',dislikes:'Avoids / dislikes',problems:'Problems you want help with'};
+function renderMe(){
+  const p=getProfile();
+  $('#meNoProfile').classList.toggle('hide',!!p);
+  $('#meWrap').classList.toggle('hide',!p);
+  if(!p)return;
+  const dz=DOSHA[p.dosha]||{name:p.doshaName||'—',el:''};
+  $('#meDosha').textContent=`Your body type: ${dz.name}${dz.el?' ('+dz.el+')':''}${p.second?' with some '+p.second:''}`;
+  $('#meDoshaNote').textContent=(BALANCE[p.dosha]&&BALANCE[p.dosha].note)||'';
+  const i=p.intake||{};
+  $('#meIntake').innerHTML=Object.keys(INTAKE_LABELS).map(k=>{
+    const v=esc(i[k]||''); const big=(k==='problems');
+    const ctl=big?`<textarea data-k="${k}" rows="3">${v}</textarea>`:`<input data-k="${k}" type="text" value="${v}">`;
+    return `<div class="meField"><label>${esc(INTAKE_LABELS[k])}</label>${ctl}</div>`;
+  }).join('');
+  renderLearn();
+}
+function renderLearn(){
+  const list=loadLearn();
+  $('#meLearn').innerHTML=list.length?list.map((l,ix)=>`<div class="learnrow"><input data-ix="${ix}" value="${esc(l.text)}"><button class="del" data-ix="${ix}" title="Delete">✕</button></div>`).join(''):'<div class="learnempty">Nothing yet. As you chat, the guide will note things about you here, or add your own below.</div>';
+  $$('#meLearn .learnrow input').forEach(inp=>inp.onchange=()=>{const a=loadLearn();const ix=+inp.dataset.ix;if(a[ix]){a[ix]={text:inp.value.trim(),src:'you'};saveLearn(a.filter(x=>x.text));}});
+  $$('#meLearn .del').forEach(b=>b.onclick=()=>{const a=loadLearn();const ix=+b.dataset.ix;const rem=a[ix];if(rem){const rm=loadRemoved();rm.push(norm(rem.text));saveRemoved(rm);a.splice(ix,1);saveLearn(a);renderLearn();}});
+}
+$('#meSave').onclick=()=>{
+  const p=getProfile(); if(!p)return; p.intake=p.intake||{};
+  $$('#meIntake [data-k]').forEach(el=>{p.intake[el.dataset.k]=el.value.trim();});
+  try{localStorage.setItem('ah_profile',JSON.stringify(p));}catch(e){}
+  $('#meSaved').classList.remove('hide'); setTimeout(()=>$('#meSaved').classList.add('hide'),2500);
+};
+$('#meLearnAddBtn').onclick=()=>{const v=$('#meLearnAdd').value.trim();if(!v)return;const a=loadLearn();a.push({text:v.slice(0,160),src:'you'});saveLearn(a);$('#meLearnAdd').value='';renderLearn();};
+$('#meRetake').onclick=()=>{localStorage.removeItem('ah_done');$('#quizIntro').classList.remove('hide');$('#quizResult').classList.add('hide');go('quiz');};
+// init
+buildChips();fillCats();browse();renderQuiz();
+try{
+  const saved=localStorage.getItem('ah_profile');
+  if(localStorage.getItem('ah_done')&&saved){ renderResult(JSON.parse(saved)); go('chat'); }
+  else { go('quiz'); }
+}catch(e){ go('quiz'); }
+// PWA
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
+</script></body></html>
